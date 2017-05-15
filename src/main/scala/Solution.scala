@@ -19,10 +19,6 @@ object Solution {
       }
     }
 
-    for (el <- 0 until p.length)
-      println(preparedText(el) + " " + p(el))
-    println(countPalindromes(preparedText, p))
-
     countPalindromes(preparedText, p)
   }
 
@@ -42,13 +38,11 @@ object Solution {
   def countPalindromes(text: Array[Char], palindromes: Array[Int]) : Int = {
     var count = 0
     for (i <- 0 until palindromes.length) {
-      if (palindromes(i) > 1) {
         if (text.charAt(i) == '#') {
           count += palindromes(i) / 2
         } else {
-          count += (palindromes(i) + 1) / 2
+          count += (palindromes(i) + 1) / 4
         }
-      }
     }
 
     count
