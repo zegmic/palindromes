@@ -15,17 +15,25 @@ object Solution {
         p(i) = math.min(right - i, p(mirror))
       }
 
-      while (preparedText(i + (1 + p(i))) == preparedText(i - (1 + p(i)))) {
+      while (localPalindromeExpands(preparedText, p, i)) {
         p(i) += 1
       }
 
-      if (i + p(i) > right) {
+      if (localPalindromeOutsideRight(p, right, i)) {
         center = i
         right = i + p(i)
       }
     }
 
     countPalindromes(p)
+  }
+
+  private def localPalindromeOutsideRight(p: Array[Int], right: Int, i: Int) = {
+    i + p(i) > right
+  }
+
+  private def localPalindromeExpands(preparedText: Array[Char], p: Array[Int], i: Int) = {
+    preparedText(i + (1 + p(i))) == preparedText(i - (1 + p(i)))
   }
 
   def prepare(textToCheck: String) : Array[Char] = {
