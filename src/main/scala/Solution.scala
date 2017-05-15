@@ -11,11 +11,13 @@ object Solution {
     var right = 0
     for (i <- 1 until preparedText.length - 1) {
       val mirror = 2 * center - i
-      if (i < right)
+      if (i < right) {
         p(i) = math.min(right - i, p(mirror))
+      }
 
-      while (preparedText(i + (1 + p(i))) == preparedText(i - (1 + p(i))))
+      while (preparedText(i + (1 + p(i))) == preparedText(i - (1 + p(i)))) {
         p(i) += 1
+      }
 
       if (i + p(i) > right) {
         center = i
