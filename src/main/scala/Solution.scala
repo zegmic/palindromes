@@ -32,7 +32,7 @@ object Solution {
 
 //    printAlgoOutput
 
-    countPalindromes(preparedText, p)
+    countPalindromes(p)
   }
 
   def prepare(textToCheck: String) : Array[Char] = {
@@ -48,7 +48,7 @@ object Solution {
     preparedArray
   }
 
-  def countPalindromes(text: Array[Char], palindromes: Array[Int]) : Int = {
+  def countPalindromes(palindromes: Array[Int]) : Int = {
     var count = 0
     for (i <- palindromes.indices) {
       count += palindromes(i) / 2
