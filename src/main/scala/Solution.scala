@@ -36,16 +36,9 @@ object Solution {
   }
 
   def prepare(textToCheck: String) : Array[Char] = {
-    val preparedArray = new Array[Char](2 * textToCheck.length + 3)
-    preparedArray(0) = '$'
-    preparedArray(2 * textToCheck.length + 2) = '@'
-    for (i <- 0 until textToCheck.length) {
-      preparedArray(2 * i + 1) = '#'
-      preparedArray(2 * i + 2) = textToCheck.charAt(i)
-    }
-    preparedArray(2 * textToCheck.length + 1) = '#'
-
-    preparedArray
+    val mappedChars = textToCheck.flatMap(char => Array('#', char))
+    val preparedText = '$' + mappedChars + "#@"
+    preparedText.toCharArray
   }
 
   def countPalindromes(palindromes: Array[Int]) : Int = {
