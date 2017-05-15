@@ -19,14 +19,18 @@ object Solution {
       }
     }
 
-    for (el <- preparedText.indices) {
-      print(preparedText(el))
+    def printAlgoOutput = {
+      for (el <- preparedText.indices) {
+        print(preparedText(el))
+      }
+      println()
+      for (el <- preparedText.indices) {
+        print(p(el))
+      }
+      println()
     }
-    println()
-    for (el <- preparedText.indices) {
-      print(p(el))
-    }
-    println()
+
+//    printAlgoOutput
 
     countPalindromes(preparedText, p)
   }
