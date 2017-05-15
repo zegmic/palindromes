@@ -19,19 +19,6 @@ object Solution {
       }
     }
 
-    def printAlgoOutput = {
-      for (el <- preparedText.indices) {
-        print(preparedText(el))
-      }
-      println()
-      for (el <- preparedText.indices) {
-        print(p(el))
-      }
-      println()
-    }
-
-//    printAlgoOutput
-
     countPalindromes(p)
   }
 
@@ -44,5 +31,4 @@ object Solution {
   def countPalindromes(palindromes: Array[Int]) : Int = {
     palindromes.reduceLeft((total, element) => total + element / 2)
   }
-
 }
