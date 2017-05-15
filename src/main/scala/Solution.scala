@@ -49,12 +49,7 @@ object Solution {
   }
 
   def countPalindromes(palindromes: Array[Int]) : Int = {
-    var count = 0
-    for (i <- palindromes.indices) {
-      count += palindromes(i) / 2
-    }
-
-    count
+    palindromes.reduceLeft((total, element) => total + element / 2)
   }
 
 }
