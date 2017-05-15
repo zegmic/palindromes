@@ -1,6 +1,10 @@
 
 object Solution {
   def solution(s: String): Int = {
+    if (s.length > 100000000) {
+      return -1
+    }
+
     val preparedText = prepare(s)
     val p = new Array[Int](preparedText.length)
     var center = 0

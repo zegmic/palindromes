@@ -61,4 +61,10 @@ class SolutionSpec extends FlatSpec with Matchers {
     palindromesCount should be (12)
   }
 
+  it should "calculate no palindromes in a longer string" in {
+    val empty = "abcdefghijklmnoprstuwyz"
+    val palindromesCount = Solution.solution(empty)
+    palindromesCount should be (0)
+  }
+
 }
