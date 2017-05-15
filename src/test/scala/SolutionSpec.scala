@@ -40,6 +40,24 @@ class SolutionSpec extends FlatSpec with Matchers {
   it should "return correct number of palindromes for a more complicated string" in {
     val empty = "abaabcbaaab"
     val palindromesCount = Solution.solution(empty)
-    palindromesCount should be (8)
+    palindromesCount should be (10)
+  }
+
+  it should "return correct number of palindromes for a string based on already tested string" in {
+    val empty = "abaabcbaaabaa"
+    val palindromesCount = Solution.solution(empty)
+    palindromesCount should be (13)
+  }
+
+  it should "return correct number of palindromes for an even more complicated string" in {
+    val empty = "abaabcbaaabdd"
+    val palindromesCount = Solution.solution(empty)
+    palindromesCount should be (11)
+  }
+
+  it should "return correct number of palindromes for a string that contains already tested string" in {
+    val empty = "abaabcbaaabddb"
+    val palindromesCount = Solution.solution(empty)
+    palindromesCount should be (12)
   }
 }
